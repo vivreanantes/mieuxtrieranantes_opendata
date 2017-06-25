@@ -1,0 +1,443 @@
+<html>
+<head>
+  <title>Portail Open Data de 'Mieux trier à Nantes'</title>
+  <style type="text/css">
+  /* base font-size corresponds to 10px and is adapted to rem unit */
+html {
+	font-size: 62.5%;
+}
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", helvetica, arial, sans-serif;
+	font-size: 1.4em; /* equiv 14px */
+	line-height: 1.5; /* adapt to your design */
+body { width: 100%; text-align: center; }
+}
+
+#centerContainer { width: 900px; text-align: left; margin: 0px auto; }
+
+/* font-sizing for content */
+/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details, 
+figure, 
+hgroup {
+	font-size: 1em; /* equiv 14px */
+	line-height: 1.5;
+	margin: 1.5em 0 0;
+}
+h1, .h1-like {
+	font-size: 1.8571em; /* equiv 26px */
+	font-weight: normal;
+	line-height: 1.6154em;
+	margin: .8077em 0 0 0;
+}
+h2, .h2-like {
+	font-size: 1.7143em; /* equiv 24px */
+	font-weight: bold;
+	line-height: 1.75em;
+	margin: .875em 0 0 0;
+}
+h3, .h3-like {
+	font-size: 1.5714em; /* equiv 22px */
+	font-weight: normal;
+	line-height: 1.909em;
+	margin: .9545em 0 0 0;
+}
+h4, .h4-like {
+	font-size: 1.4286em; /* equiv 20px */
+	font-weight: normal;
+	line-height: 1.05em;
+	margin:  1.05em 0 0 0;
+}
+h5, .h5-like {
+	font-size: 1.2857em; /* equiv 18px */
+	font-weight: normal;
+	line-height: 1.1667em;
+	margin:  1.1667em 0 0 0;
+}
+h6, .h6-like {
+	font-size: 1.1429em; /* equiv 16px */
+	font-weight: normal;
+	line-height: 1.3125em;
+	margin:  1.3125em 0 0 0;
+}
+
+/* alternate font-sizing */
+.smaller {
+	font-size: .7143em; /* equiv 10px */
+	line-height: 2.1em;
+}
+.small {
+	font-size: .8571em; /* equiv 12px */
+	line-height: 1.75em;
+}
+.big {
+	font-size: 1.1429em; /* equiv 16px */
+	line-height: 1.3125em;
+}
+.bigger {
+	font-size: 1.2857em; /* equiv 18px */
+	line-height: 1.1667em;
+}
+.biggest {
+	font-size: 1.4286em; /* equiv 20px */
+	line-height: 1.05em;
+}
+
+/* soft reset */
+html,
+body,
+textarea,
+figure,
+label {
+	margin: 0;
+	padding: 0;
+}
+ul,
+ol {
+	padding-left: 2em;
+}
+code, 
+pre,
+samp {
+	white-space: pre-wrap;
+	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+}
+code { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+	max-width: 100%;
+}
+
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+
+/* pictures */
+img {
+	width: auto;
+	height: auto;
+	vertical-align: middle;
+}
+a img { border: 0; }
+
+/* scripts */
+body > script {display: none !important;}
+
+/* skip-links */
+.skip-links {
+	position: absolute;
+}
+.skip-links a {
+	position: absolute;
+	left: -9999px;
+	padding: 0.5em;
+	background: #000;
+	color:#fff;
+	text-decoration: none;
+}
+.skip-links a:focus {
+	position: static;
+}
+  .description {
+    display:none;
+  }
+  .date_mise_a_jour {
+    color:green;
+  }
+  .opendata {
+    border:1px dotted black;
+  }
+  .license {
+    color:grey;
+  }
+  .plusdinfos {
+    font-weight:bold;
+	text-decoration:underline;
+  }
+  
+  </style>
+  <script type="text/javascript">
+  function show_hide_div(nomdiv){
+    var lediv = document.getElementById(nomdiv);
+  if(lediv.style.display=="block")
+    lediv.style.display="none";
+  else
+    lediv.style.display="block";
+  }
+</script>
+</head>
+<body>
+<div id="centerContainer">
+  <center><h1>Portail Open Data de 'Mieux trier à Nantes'</h1></center>
+  
+  <br/>
+   <div>
+     Sur cette page l'association 'Mieux trier à Nantes' regroupe des données, en licence Open Data (réutilisable gratuitement), autour du domaine du tri.<br/>
+	 <div class="plusdinfos">A propos de l'Open Data :</div>
+	    Les données en Open-Data évitent les problèmes de copyrights et de droit à l’image, et permettent la réutilisation par tous les acteurs.<br/>
+	    La licence des données doit être mentionnée clairement, par exemple “Open Database License (ODbL)” pour les tableurs, “Creative Commons Attribution (BY)” pour les images/vidéos. Une donnée Open-Data doit être bien référencée, disponible sur des portails, réutilisable.<br/>
+        Quelques explications supplémentaires sur l'Open Data : <a href='https://mieuxtrieranantes.files.wordpress.com/2017/01/opendata.ppt' target='_blank'>Diaporama</a> et <a href='https://www.youtube.com/watch?v=iCGcxPa-r4o' target='_blank'>Vidéo sur utube</a>
+	 <!--div class='plusdinfos' onClick="show_hide_div('idod')" style="font-weight:normal;">Plus d'infos sur l'Open Data</div>
+	 <div class='description' id="idod">
+		
+	  </div-->
+   </div>
+   
+   <h2>Données fournies par 'Mieux trier à Nantes'</h2>
+  
+    <h3 id='structures_reemploi_nantes_metropole'>Structures de réemploi Nantes Métropole</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/mieuxtrieranantes-structurereemploi.xls' target='_blank'>mieuxtrieranantes-structurereemploi.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+	  <div class='summary'>Description : Pour chaque structure un nom, une description, des photos...</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+
+    <h3 id='vente_en_vrac_nantes_metropole'>Vente en vrac sur Nantes Métropole</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/mieuxtrieranantes-ventevrac.xls' target='_blank'>mieuxtrieranantes-ventevrac.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 02/2017</div>
+	  <div class='summary'>Structures réalisant de la vente en vrac sur Nantes Métropole.</div>
+	  <div class='plusdinfos' onClick="show_hide_div('id1')">Plus d'infos</div>
+	  <div class='description' id="id1">
+	    "Mieux trier à Nantes" et "Abracada'Vrac" co-alimentent gratuitement une liste des données, en licence Open-Data (ODbL), concernant les structures réalisant de la vente en vrac sur Nantes Métropole.<br/>
+        Si d'autres structures ou des particuliers voulaient également collaborer, ce serait possible. Il faudrait juste avertir tous les fournisseurs de données.<br/>
+        Concernant les données :<br/>
+        - pour chaque structure on fournit les informations suivantes: nom, description (format HTML), adresse, téléphone, mail, compte Facebook, Twitter, Google plus.<br/>
+        - on listera les catégories de produits fournis (par exemple "céréale", "shampooing", "savon").<br/>
+        - on précisera le lien vers le marqueur Open Street Map, quand il existe.<br/>
+        - on ne détaillera pas les produits individuellement (avec tarifs) car cela n'est pas souhaité par les professionnels.<br/>
+        - on met dans "source" le ou les fournisseurs de données, avec la date de mise à jour.<br/>
+        - une structure est une entreprise, une association ou un collectif.<br/>
+        - une structure peut avoir plusieurs établissements. Si c'est le cas il y aura une ligne par établissement.<br/>
+        - on demandera systématiquement l'accord des structures recensées.<br/>
+      </div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+  
+    <h3 id='dechets_nantes_metropole'>Déchets</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/dechets_nantes.xls' target='_blank'>dechets_nantes.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+       <div class='summary'>Une liste des déchets permettant de retrouver les catégories de traitement (165 déchets environ).</div>
+	  <div class='plusdinfos' onClick="show_hide_div('desc_dechets_nantes_metropole')">Plus d'infos</div>
+	  <div class='description' id="desc_dechets_nantes_metropole">Description : Pour chaque déchet un nom, une description, une image, les mots qui peuvent correspondre, les modes de collecte qui correspondent, une catégorie usuelle, une catégorie de traitement.<br/>
+	  Les catégories usuelles correspondent aux données "Catégories usuelles des déchets (Nantes Métropole)"<br/>
+	  Les catégories de traitement correspondent aux données "Catégories de traitement des déchets (Nantes Métropole)"<br/>
+	  Les conseils correspondent aux données "Conseil tri des déchets (Nantes Métropole)"<br/>
+	  </div>
+	   <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+
+	<h3 id='dechet_categories_usuelles_nantes_metropole'>Catégories usuelles des déchets (Nantes Métropole)</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/categories_usuelles_des_dechets_nantes.xls' target='_blank'>categories_usuelles_des_dechets_nantes.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+      <div class='summary'>Description : les catégories usuelles sont destinées à permettre à un utilisateur de retrouver naturellement son déchet. Exemple : le déchet « cannette » est dans la catégorie « Métal ».</div>
+	  <div class='plusdinfos' onClick="show_hide_div('id2')">Plus d'infos</div>
+	  <div class='description' id="id2">
+	  Exemple de catégories : Plastique, Brique, Papier-Carton, Métal, Déchets vert + Bois, Verre + Vaisselle, Vêtement + Tissu, Encombrant + Électronique, Divers + Médicament + Toxique
+	  </div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+
+	<h3 id='dechet_categories_traitement_nantes_metropole'>Catégories de traitement des déchets (Nantes Métropole)</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/categories_traitements_des_dechets_nantes.xls' target='_blank'>categories_traitements_des_dechets_nantes.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+      <div class='summary'>Description : les catégories de traitement sont des regroupements de déchets qui correspondent à des mêmes processus de traitement pour le tri. Par exemple les déchets D3E.</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+
+	<h3 id='dechet_conseils_nantes_metropole'>Conseils pour les déchets (Nantes Métropole)</h3>
+	<div class='opendata'>
+      <div class='liens'>Lien de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/conseils_dechets_nantes.xls'>conseils_dechets_nantes.xls</a></div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+      <div class='summary'></div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	</div>
+	
+	<h3 id='dechets_photos'>Photos de déchets</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <br/>
+        - <a href='https://github.com/vivreanantes/VivreANantes_Complements/tree/master/resources/images/grandes' target='_blank'>les photos en 1240×1240</a><br/>
+        - <a href='https://github.com/vivreanantes/VivreANantes_Complements/tree/master/resources/images/petites' target='_blank'>les photos en 150×150</a><br/>
+        - <a href='https://github.com/vivreanantes/VivreANantes_Complements/tree/master/resources/images/mini' target='_blank'>les photos en 100×100</a>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 12/2016</div>
+       <div class='summary'>Description : Photos de déchets ('ressources') utilisées notamment par l'application 'Mieux trier à Nantes'</div>
+	  <div class='license'>Licence : Ces images sont sous licence « Creative Commons Attribution (BY) » (en français « paternité »).<br/>
+        « Le titulaire des droits autorise toute exploitation de l’œuvre, y compris à des fins commerciales, ainsi que la création d’œuvres dérivées, dont la distribution est également autorisé sans restriction, à condition de l’attribuer à son l’auteur en citant son nom. »<br/>
+      </div>
+    </div>
+
+	<h3 id='photos_reemploi'>Photos des structures de réemploi</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/docs/medias/StructuresReemploi' target='_blank'>les photos en 1240×1240</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 01/2017</div>
+       <div class='summary'>Description : Photos prises lors des visites de structures de réemploi, utilisées notamment par l'application 'Mieux trier à Nantes'</div>
+	  <div class='license'>Licence : Ces images sont sous licence « Creative Commons Attribution (BY) » (en français « paternité »).<br/>
+        « Le titulaire des droits autorise toute exploitation de l’œuvre, y compris à des fins commerciales, ainsi que la création d’œuvres dérivées, dont la distribution est également autorisé sans restriction, à condition de l’attribuer à son l’auteur en citant son nom. »<br/>
+      </div>
+    </div>
+
+	<h3 id='videos_filiere_tri'>Vidéos filière tri</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/docs/medias/VideosFiliereTri' target='_blank'>Vidéos MP4</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 03/2017</div>
+       <div class='summary'>Description : Vidéos prises lors des visites</div>
+	  <div class='license'>Licence : Ces images sont sous licence « Creative Commons Attribution (BY) » (en français « paternité »).<br/>
+        « Le titulaire des droits autorise toute exploitation de l’œuvre, y compris à des fins commerciales, ainsi que la création d’œuvres dérivées, dont la distribution est également autorisé sans restriction, à condition de l’attribuer à son l’auteur en citant son nom. »<br/>
+      </div>
+    </div>
+
+	<h3 id='palenv'>Fiche Pratique : installation pour scoutisme sur le tri des déchets</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/palenv.doc' target='_blank'>Fichier doc</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 05/2009</div>
+       <div class='summary'>Description : Cette fiche décrit une installation spécifique, faisable en camp : la Palenv (palette-environnement).</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+    </div>
+
+	<h3 id='photo_cartographie_initiatives'>Photos cartographie des initiatives</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/docs/medias/CartographieInitiatives/' target='_blank'>Images </a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 04/2017</div>
+       <div class='summary'>Description : Photos de la cartographe des initiatives (recensement des initiatives autour de la réduction des déchets).</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+    </div>
+	
+   <h2>Données fournies par d'autres structures</h2>
+   
+   <h3 id='conteneurs_le_relais'>Conteneurs Le Relais sur Nantes Métropole</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='www.mieuxtrieranantes.fr/opendata/data/cu_nantes_metropole_emplacements.ods' >tableur (format odt)</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 11/2016</div>
+       <div class='summary'>Description : Emplacement des différents conteneurs de vêtements (environ 50)</div>
+	   <div class='author'>Emetteur : Le Relais</div>
+	  <div class='license'>Licence : inconnue</div>
+    </div>
+	
+   <h3 id='composteurs_collectifs'>Composteurs collectifs</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.compostri.fr/data/' >tableur (format xls)</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : données temps réel</div>
+       <div class='summary'>Description : Emplacement des différents composteurs collectifs sur Nantes Métropole (environ 150 composteurs)</div>
+	   <div class='author'>Emetteur : Compostri</div>
+	  <div class='license'>Licence : Open Data (licence précise inconnue, mais Compostri est OK)</div>
+    </div>
+
+	<h3 id='videos_ecoevenemens'>Vidéos : défis de l'éco-responsabilité événementielle.</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <br/>
+	  - Défi 1, Gérer les déchets : <a href='https://vimeo.com/album/3660413/video/142122899' target='_blank'>Vidéo</a><br/>
+	  - Défi 3, Consommation et restauration  : <a href='https://vimeo.com/album/3660413/video/142126323' target='_blank'>Vidéo</a><br/>
+	  - Défi 5, Sensibiliser et mobiliser : <a href='https://vimeo.com/album/3660413/video/142134089' target='_blank'>Vidéo</a><br/>
+	  - Toutes les vidéos : <a href='https://vimeo.com/album/3660413' target='_blank'>https://vimeo.com/album/3660413</a>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 04/2017</div>
+       <div class='summary'>Description : L'association "Marie Et Alphonse" a réalisé pour le compte de Nantes Métropole, huit tutoriels vidéos, sur les défis de l'éco-responsabilité événementielle.</div>
+	  <div class='license'>Licence : Ces images sont sous licence « Creative Commons Attribution (BY) » (en français « paternité »).<br/>
+        « Le titulaire des droits autorise toute exploitation de l’œuvre, y compris à des fins commerciales, ainsi que la création d’œuvres dérivées, dont la distribution est également autorisé sans restriction, à condition de l’attribuer à son l’auteur en citant son nom. »<br/>
+      </div>
+	  <div class='author'>Emetteur : Nantes métropole</div>
+    </div>
+	
+	<h3 id='guide_zero_dechet_nantes'>Guide Pratique : zéro déchet (sur Nantes)</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/GuideZeroDechetNantesMetropole.pdf' target='_blank'>Fichier PDF</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 04/2017</div>
+       <div class='summary'>Description : Guide rapide des gestes de base, créé dans le cadre de l'anniversaire de Nuit Debout Nantes.</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+	  <div class='author'>Emetteur : Charles Duvergey</div>
+    </div>
+	
+	<h3 id='bouchons_damour'>Collecteurs Bouchons d'Amour</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='http://www.mieuxtrieranantes.fr/opendata/data/collecteurs_bouchons_damour.xls' target='_blank'>Fichier xls</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : 04/2017</div>
+      <div class='summary'>Description : Emplacements des collecteurs accessibles au public, sur Nantes Métropole et les environs. Transmis par l'association "Bouchons d'Amour".</div>
+	  <div class='author'>Emetteur : Bouchons d'Amour</div>
+	  <div class='license'>Licence : Open Database License (ODbL)</div>
+    </div>
+	
+	<h3 id='collectes_citoyennes'>Collectes citoyennes de déchets, par PP Plastic Pickup</h3>
+	<div class='opendata'>
+	  <div class='liens'>Liens de téléchargement : <a href='https://www.plastiques.eu/wp-json/wp/v2/actions/' target='_blank'>JSON</a><br/>
+	  </div>
+      <div class='date_mise_a_jour'>Date de mise-à-jour : temps réel</div>
+      <div class='summary'>Description : Calendrier des prochaines collectes collectives de déchets.</div>
+	  <div class='author'>Emetteur : PP Plastik Pickup</div>
+	  <div class='license'>Licence : inconnu (mais Open Data)</div>
+    </div>
+	
+	<br/>
+	Ce portail est maintenu par l'association "Mieux trier à Nantes". Voir sur le blog : <a href='https://mieuxtrieranantes.wordpress.com/a-propos/' target='_blank'>https://mieuxtrieranantes.wordpress.com/a-propos/</a>
+	<br/><br/>
+</div>
+</body>
+</html>
+<!--
+<h3></h3>
+<a href=''></a>
+<div class='date_mise_a_jour'>Date de mise-à-jour : 05/2016</div>
+<div class='summary'></div>
+-->
